@@ -29,12 +29,13 @@ class ViewController: UIViewController, UIDocumentPickerDelegate, UIDocumentInte
     }
 
     var gotURL: NSURL?
-    @IBOutlet weak var fileLabel: UILabel!
     func documentPicker(controller: UIDocumentPickerViewController, didPickDocumentAtURL url: NSURL) {
         // present document here
         self.gotURL = url
         self.previewButton.enabled = true
-        self.fileLabel.text = url.description
+        if let parentController = self.parentViewController as? UINavigationController {
+            parentController.title = url.description
+        }
     }
 
     func documentPickerWasCancelled(controller: UIDocumentPickerViewController) {
@@ -42,7 +43,6 @@ class ViewController: UIViewController, UIDocumentPickerDelegate, UIDocumentInte
         self.previewButton.enabled = false
     }
 
-    @IBOutlet weak var documentView: UIView!
     @IBAction func previewDocument(sender: AnyObject) {
         if let gotURL = self.gotURL {
             let preview = UIDocumentInteractionController(URL: gotURL)
@@ -52,11 +52,22 @@ class ViewController: UIViewController, UIDocumentPickerDelegate, UIDocumentInte
     }
 
     func documentInteractionControllerViewControllerForPreview(controller: UIDocumentInteractionController) -> UIViewController {
-        return self
+        if let parentController = self.parentViewController as? UINavigationController {
+            return parentController
+        }
+        else {
+            return self
+        }
     }
 
-    func documentInteractionControllerViewForPreview(controller: UIDocumentInteractionController) -> UIView? {
-        return self.documentView
+    func documentInteractionControllerWillBeginPreview(controller: UIDocumentInteractionController) {
+        if let parentController = self.parentViewController as? UINavigationController {
+            println(parentController.title)
+            println(self.title)
+        }
+        else {
+            println("Hrm, not navigation?")
+        }
     }
 
 }
