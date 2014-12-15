@@ -8,17 +8,18 @@
 
 import UIKit
 import MobileCoreServices
+import QuickLook
 
-class ViewController: UIViewController, UIDocumentPickerDelegate, UIDocumentInteractionControllerDelegate {
+class ViewController: UIViewController, UIDocumentPickerDelegate, UIDocumentInteractionControllerDelegate, QLPreviewControllerDelegate, QLPreviewControllerDataSource {
+
+    @IBOutlet weak var openinButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.previewButton.enabled = false
+        self.openinButton.enabled = false
     }
 
     let UTIs: [String] = [kUTTypeText, kUTTypePlainText, kUTTypeUTF8PlainText, kUTTypeUTF16ExternalPlainText, kUTTypeUTF16PlainText, kUTTypeRTF, kUTTypeHTML, kUTTypeXML, kUTTypeSourceCode, kUTTypeCSource, kUTTypeObjectiveCSource, kUTTypeCPlusPlusSource, kUTTypeObjectiveCPlusPlusSource, kUTTypeCHeader, kUTTypeCPlusPlusHeader, kUTTypeJavaSource, kUTTypePDF, kUTTypeRTFD, kUTTypeFlatRTFD, kUTTypeTXNTextAndMultimediaData, kUTTypeWebArchive, kUTTypeImage, kUTTypeJPEG, kUTTypeJPEG2000, kUTTypeTIFF, kUTTypePICT, kUTTypeGIF, kUTTypePNG, kUTTypeQuickTimeImage, kUTTypeAppleICNS, kUTTypeBMP, kUTTypeICO, kUTTypeAudiovisualContent, kUTTypeMovie, kUTTypeVideo, kUTTypeAudio, kUTTypeQuickTimeMovie, kUTTypeMPEG, kUTTypeMPEG4, kUTTypeMP3, kUTTypeMPEG4Audio, kUTTypeAppleProtectedMPEG4Audio]
-
-    @IBOutlet weak var previewButton: UIBarButtonItem!
 
     @IBAction func showiCloudDrive(sender: UIBarButtonItem) {
         let picker = UIDocumentPickerViewController(documentTypes: self.UTIs, inMode: .Open)
@@ -32,22 +33,30 @@ class ViewController: UIViewController, UIDocumentPickerDelegate, UIDocumentInte
     func documentPicker(controller: UIDocumentPickerViewController, didPickDocumentAtURL url: NSURL) {
         // present document here
         self.gotURL = url
-        self.previewButton.enabled = true
+        self.openinButton.enabled = true
+
+        let preview = QLPreviewController()
+        preview.delegate = self
+        preview.dataSource = self
         if let parentController = self.parentViewController as? UINavigationController {
-            parentController.title = url.description
+            parentController.title = url.lastPathComponent
+            self.addChildViewController(preview)
+            preview.view.frame = self.view.frame
+            self.view.addSubview(preview.view)
+            preview.didMoveToParentViewController(self)
+            parentController.navigationItem.rightBarButtonItem = self.openinButton!
+        }
+        else {
+            self.presentViewController(preview, animated: true) { () -> Void in
+                // do nothing
+            }
         }
     }
 
     func documentPickerWasCancelled(controller: UIDocumentPickerViewController) {
         println("Cancelled!")
-        self.previewButton.enabled = false
-    }
-
-    @IBAction func previewDocument(sender: AnyObject) {
-        if let gotURL = self.gotURL {
-            let preview = UIDocumentInteractionController(URL: gotURL)
-            preview.delegate = self
-            preview.presentPreviewAnimated(true)
+        if self.gotURL == nil {
+            self.openinButton.enabled = false
         }
     }
 
@@ -67,6 +76,25 @@ class ViewController: UIViewController, UIDocumentPickerDelegate, UIDocumentInte
         }
         else {
             println("Hrm, not navigation?")
+        }
+    }
+
+    func previewController(controller: QLPreviewController!, previewItemAtIndex index: Int) -> QLPreviewItem! {
+        return self.gotURL
+    }
+
+    func numberOfPreviewItemsInPreviewController(controller: QLPreviewController!) -> Int {
+        return 1
+    }
+
+    var preview: UIDocumentInteractionController? = nil
+    @IBAction func openin(sender: UIBarButtonItem) {
+        if let gotURL = self.gotURL {
+            self.preview = UIDocumentInteractionController(URL: gotURL)
+            if let preview = self.preview {
+                preview.delegate = self
+                preview.presentOptionsMenuFromBarButtonItem(sender, animated: true)
+            }
         }
     }
 

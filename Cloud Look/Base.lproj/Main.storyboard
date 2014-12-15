@@ -24,14 +24,14 @@
                                 <action selector="showiCloudDrive:" destination="BYZ-38-t0r" id="gIh-2X-Om5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Preview" id="KYB-yb-5H2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="KYB-yb-5H2">
                             <connections>
-                                <action selector="previewDocument:" destination="BYZ-38-t0r" id="Nc1-QE-aJc"/>
+                                <action selector="openin:" destination="BYZ-38-t0r" id="YDh-Sv-sKy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="previewButton" destination="KYB-yb-5H2" id="ZU4-U9-yE5"/>
+                        <outlet property="openinButton" destination="KYB-yb-5H2" id="GJx-Xt-CyZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
