@@ -11,7 +11,6 @@
 		6C889FD61A3E5DB000D0D2C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C889FD51A3E5DB000D0D2C2 /* ViewController.swift */; };
 		6C889FD91A3E5DB000D0D2C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C889FD71A3E5DB000D0D2C2 /* Main.storyboard */; };
 		6C889FDB1A3E5DB000D0D2C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C889FDA1A3E5DB000D0D2C2 /* Images.xcassets */; };
-		6C889FDE1A3E5DB000D0D2C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C889FDC1A3E5DB000D0D2C2 /* LaunchScreen.xib */; };
 		6C889FEA1A3E5DB000D0D2C2 /* iCloud_DriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C889FE91A3E5DB000D0D2C2 /* iCloud_DriveTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +31,6 @@
 		6C889FD51A3E5DB000D0D2C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6C889FD81A3E5DB000D0D2C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C889FDA1A3E5DB000D0D2C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6C889FDD1A3E5DB000D0D2C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6C889FE31A3E5DB000D0D2C2 /* Cloud LookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cloud LookTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C889FE81A3E5DB000D0D2C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C889FE91A3E5DB000D0D2C2 /* iCloud_DriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloud_DriveTests.swift; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 				6C889FD51A3E5DB000D0D2C2 /* ViewController.swift */,
 				6C889FD71A3E5DB000D0D2C2 /* Main.storyboard */,
 				6C889FDA1A3E5DB000D0D2C2 /* Images.xcassets */,
-				6C889FDC1A3E5DB000D0D2C2 /* LaunchScreen.xib */,
 				6C889FD11A3E5DB000D0D2C2 /* Supporting Files */,
 			);
 			path = "Cloud Look";
@@ -193,7 +190,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C889FD91A3E5DB000D0D2C2 /* Main.storyboard in Resources */,
-				6C889FDE1A3E5DB000D0D2C2 /* LaunchScreen.xib in Resources */,
 				6C889FDB1A3E5DB000D0D2C2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,14 +238,6 @@
 				6C889FD81A3E5DB000D0D2C2 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6C889FDC1A3E5DB000D0D2C2 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6C889FDD1A3E5DB000D0D2C2 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
