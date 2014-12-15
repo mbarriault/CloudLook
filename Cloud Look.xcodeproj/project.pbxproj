@@ -34,6 +34,7 @@
 		6C889FE31A3E5DB000D0D2C2 /* Cloud LookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cloud LookTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C889FE81A3E5DB000D0D2C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C889FE91A3E5DB000D0D2C2 /* iCloud_DriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloud_DriveTests.swift; sourceTree = "<group>"; };
+		6C889FF31A3E5DE000D0D2C2 /* Cloud Look.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Cloud Look.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 		6C889FD01A3E5DB000D0D2C2 /* Cloud Look */ = {
 			isa = PBXGroup;
 			children = (
+				6C889FF31A3E5DE000D0D2C2 /* Cloud Look.entitlements */,
 				6C889FD31A3E5DB000D0D2C2 /* AppDelegate.swift */,
 				6C889FD51A3E5DB000D0D2C2 /* ViewController.swift */,
 				6C889FD71A3E5DB000D0D2C2 /* Main.storyboard */,
@@ -158,6 +160,12 @@
 				TargetAttributes = {
 					6C889FCD1A3E5DB000D0D2C2 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = T6EMAZPCZ3;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					6C889FE21A3E5DB000D0D2C2 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -326,9 +334,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Cloud Look/Cloud Look.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Cloud Look/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -336,9 +348,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Cloud Look/Cloud Look.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Cloud Look/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
