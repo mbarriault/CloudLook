@@ -31,6 +31,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="icloudButton" destination="PhI-h3-sSU" id="ER2-T4-lBn"/>
                         <outlet property="openinButton" destination="KYB-yb-5H2" id="GJx-Xt-CyZ"/>
                     </connections>
                 </viewController>
