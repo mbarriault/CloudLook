@@ -35,6 +35,8 @@
 		6C889FE81A3E5DB000D0D2C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C889FE91A3E5DB000D0D2C2 /* iCloud_DriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloud_DriveTests.swift; sourceTree = "<group>"; };
 		6C889FF31A3E5DE000D0D2C2 /* Cloud Look.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Cloud Look.entitlements"; sourceTree = "<group>"; };
+		6CE5F0191A43582600DE2383 /* update_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = update_build_number.sh; sourceTree = "<group>"; };
+		6CE5F01A1A43582E00DE2383 /* nth-commit.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "nth-commit.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				6C889FD01A3E5DB000D0D2C2 /* Cloud Look */,
 				6C889FE61A3E5DB000D0D2C2 /* Cloud LookTests */,
 				6C889FCF1A3E5DB000D0D2C2 /* Products */,
+				6CE5F0181A43581000DE2383 /* Scripts */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +114,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6CE5F0181A43581000DE2383 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				6CE5F0191A43582600DE2383 /* update_build_number.sh */,
+				6CE5F01A1A43582E00DE2383 /* nth-commit.sh */,
+			);
+			name = Scripts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,6 +133,7 @@
 				6C889FCA1A3E5DB000D0D2C2 /* Sources */,
 				6C889FCB1A3E5DB000D0D2C2 /* Frameworks */,
 				6C889FCC1A3E5DB000D0D2C2 /* Resources */,
+				6CE5F01B1A43584200DE2383 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -210,6 +223,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CE5F01B1A43584200DE2383 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/update_build_number.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6C889FCA1A3E5DB000D0D2C2 /* Sources */ = {
@@ -411,6 +440,7 @@
 				6C889FEF1A3E5DB000D0D2C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C889FF01A3E5DB000D0D2C2 /* Build configuration list for PBXNativeTarget "Cloud LookTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +449,7 @@
 				6C889FF21A3E5DB000D0D2C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
