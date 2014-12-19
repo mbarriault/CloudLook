@@ -35,6 +35,8 @@
 		6C889FE81A3E5DB000D0D2C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C889FE91A3E5DB000D0D2C2 /* iCloud_DriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloud_DriveTests.swift; sourceTree = "<group>"; };
 		6C889FF31A3E5DE000D0D2C2 /* Cloud Look.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Cloud Look.entitlements"; sourceTree = "<group>"; };
+		6CC0700B1A447906004C0015 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6CC0700C1A447947004C0015 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		6CE5F0191A43582600DE2383 /* update_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = update_build_number.sh; sourceTree = "<group>"; };
 		6CE5F01A1A43582E00DE2383 /* nth-commit.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "nth-commit.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +62,8 @@
 		6C889FC51A3E5DB000D0D2C2 = {
 			isa = PBXGroup;
 			children = (
+				6CC0700B1A447906004C0015 /* LICENSE */,
+				6CC0700C1A447947004C0015 /* README */,
 				6C889FD01A3E5DB000D0D2C2 /* Cloud Look */,
 				6C889FE61A3E5DB000D0D2C2 /* Cloud LookTests */,
 				6C889FCF1A3E5DB000D0D2C2 /* Products */,
